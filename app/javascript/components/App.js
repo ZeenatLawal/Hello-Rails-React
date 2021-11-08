@@ -1,5 +1,6 @@
 import React from "react"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Greeting from "./Greeting";
 
 class App extends React.Component {
   render () {
@@ -7,6 +8,7 @@ class App extends React.Component {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={("Welcome!")} />
+          <Route path="/greeting" element={<Greeting />} />
         </Routes>
       </BrowserRouter>
     );
