@@ -35,8 +35,5 @@
 yarn-debug.log*
 .yarn-integrity
 
-
-.babelrc
-.eslintrc.json
 .rubocop.yml
 .stylelintrc.json
