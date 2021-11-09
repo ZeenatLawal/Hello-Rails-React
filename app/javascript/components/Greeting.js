@@ -1,13 +1,20 @@
-import React from "react"
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getGreetingsSuccess } from "../redux/greetings/greetings";
 
-class Greeting extends React.Component {
-  render () {
-    return (
-      <>
-        <h1>Greetings everyone</h1>
-      </>
-    );
-  }
-}
+const Greeting = () => {
+  const dispatch = useDispatch();
+  const greeting = useSelector((state) => state.greetingsReducer.message);
+  
+  useEffect(() => {
+    dispatch(getGreetingsSuccess());
+  }, [dispatch]);
 
-export default Greeting
+  return (
+    <>
+      <h1><i>{greeting}</i>!!</h1>
+    </>
+  );
+};
+
+export default Greeting;
